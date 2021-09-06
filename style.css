@@ -103,16 +103,21 @@ form {
     padding: 40px;
 }
 
-input {
+input,
+button {
     display: block;
     width: 100%;
     height: 55px;
     margin: 20px 0;
     outline: none;
-    border: 1px solid hsl(0, 0%, 85%);
-    padding-left: 30px;
+    border-radius: 5px;
+}
+
+input {
     font-weight: 800;
     font-size: 0.95rem;
+    border: 1px solid hsl(0, 0%, 85%);
+    padding-left: 30px;
     color: var(--dark-blue);
 }
 
@@ -124,7 +129,7 @@ input:focus {
     border: 1px solid var(--dark-blue);
 }
 
-[type="submit"] {
+button {
     padding: 0;
     color: hsl(0, 100%, 100%);
     background-color: var(--green);
