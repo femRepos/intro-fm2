@@ -24,7 +24,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--red);
     background-image: url(./images/bg-intro-desktop.png);
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
     color:hsl(0, 100%, 100%);
     min-height: 100vh;
@@ -131,6 +131,11 @@ input {
     color: var(--dark-blue);
 }
 
+input::placeholder {
+    color: hsl(249, 10%, 26%, 0.8);
+    font-size: 0.9rem;
+}
+
 input:focus {
     border: 1px solid var(--dark-blue);
 }
@@ -176,7 +181,7 @@ button {
     background-color: var(--green);
     border: none;
     box-shadow: 0 5px hsl(154, 59%, 45%);
-    margin: 25px 0 20px;
+    margin: 25px 0 15px;
     text-transform: uppercase;
     font-size: 0.85rem;
     font-weight: 600;
