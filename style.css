@@ -105,6 +105,7 @@ form {
 }
 
 label {
+    position: relative;
     display: block;
     margin-top: 20px;
 }
@@ -144,6 +145,18 @@ input:focus {
 }
 
 .error > .error__msg {
+    display: block;
+}
+
+.error__icon {
+    display: none;
+    position: absolute;
+    top: calc(55px / 2);
+    right: 25px;
+    transform: translateY(-50%);
+}
+
+.error > .error__icon {
     display: block;
 }
 
