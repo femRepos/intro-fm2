@@ -118,7 +118,7 @@ input {
     font-weight: 800;
     font-size: 0.95rem;
     border: 1px solid hsl(0, 0%, 85%);
-    padding-left: 30px;
+    padding: 0 30px;
     color: var(--dark-blue);
 }
 
@@ -142,6 +142,11 @@ button {
     letter-spacing: 1px;
 }
 
+button:hover {
+    background-color: hsl(154, 59%, 61%);
+    cursor: pointer;
+}
+
 small {
    color: var(--grayish-blue); 
    font-weight: 600;
@@ -151,6 +156,8 @@ small {
 small > span {
     color: var(--red);
 }
+
+/* mobile version */
 
 @media only screen and (max-width: 850px) {
     body {
