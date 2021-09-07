@@ -41,6 +41,7 @@ p {
 /* main */
 main {
     width: 80%;
+    max-width: 1240px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -134,7 +135,7 @@ button {
     color: hsl(0, 100%, 100%);
     background-color: var(--green);
     border: none;
-    box-shadow: 0 5px hsl(154, 59%, 41%);
+    box-shadow: 0 5px hsl(154, 59%, 45%);
     text-transform: uppercase;
     font-size: 0.85rem;
     font-weight: 600;
@@ -149,4 +150,59 @@ small {
 
 small > span {
     color: var(--red);
+}
+
+@media only screen and (max-width: 850px) {
+    body {
+        padding: 90px 25px 60px;
+        text-align: center;
+        background-image: url(./images/bg-intro-mobile.png);
+        background-size: 100%;
+    }
+
+    main {
+        flex-direction: column;
+        max-width: 525px;
+        width: 100%;
+    }
+
+    p {
+        line-height: 1.5rem;
+    }
+
+    /* hero */
+
+    .hero,
+    .input {
+        width: 100%;
+    }
+
+    .hero {
+        margin-bottom: 60px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+        line-height: 2.5rem;
+    }
+
+    /* input */
+
+    .form-header {
+        padding: 18px 50px;
+    }
+
+    form {
+        padding: 25px;
+    }
+
+    input,
+    button {
+        margin: 15px 0;
+    }
+
+    input {
+        font-size: 0.85rem;
+        padding-left: 20px;
+    }
 }
