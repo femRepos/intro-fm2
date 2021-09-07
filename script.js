@@ -1,8 +1,14 @@
 const form = document.querySelector('form')
+const inputs = document.querySelectorAll('input')
 
 form.addEventListener('submit', (event) => {
     event.preventDefault()
-    checkValidation(validateString)
+})
+
+inputs.forEach(input => {
+    input.addEventListener('focusout', event => {
+        checkValidation(validateString)
+    })
 })
 
 function checkValidation(isValid) {
@@ -33,7 +39,7 @@ function validateString(string, type) {
     switch(type) {
         case 'name':
             // ensure name only includes alphabets
-            const alphabet = 'abcdefghijklmnopqrstuvwxyz'
+            const alphabet = 'abcdefghijklmnopqrstuvwxyz '
 
             for (char of string) {
                 if (!alphabet.includes(char.toLowerCase())) {
