@@ -12,43 +12,20 @@ function checkValidation(isValid) {
     let password = form.password;
 
     if (firstname.value) {
-        if (isValid(firstname.value, 'name')) {
-            removeError(firstname)
-        } else {
-            alertError(firstname)
-        }
-    } else {
-        alertError(firstname)
-    } 
-
+        isValid(firstname.value, 'name') ? removeError(firstname) : alertError(firstname)
+    } else alertError(firstname)
 
     if (lastname.value) {
-        if (isValid(lastname.value, 'name')) {
-            removeError(lastname)
-        } else {
-            alertError(lastname)
-        }
-    } else {
-        alertError(lastname)
-    }
+        isValid(lastname.value, 'name') ? removeError(lastname) : alertError(lastname)
+    } else alertError(lastname)
 
-    if (!email.value) {
-        alertError(email)
-    } else {
-        removeError(email)
-    }
+    if (email.value) {
+        isValid(email.value, 'email') ? removeError(email) : alertError(email)
+    } else alertError(email)
 
     if (password.value) {
-        if (isValid(password.value, 'password')) {
-            removeError(password)
-        } else {
-            console.log('Password must contain at least 8 characters consisting of a number & a special character: ' + password)
-            alertError(password)
-        }
-    } else {
-        console.log('Password cannot be empty!')
-        alertError(password)
-    } 
+        isValid(password.value, 'password') ? removeError(password) : alertError(password)
+    } else alertError(password)
 }
 
 function validateString(string, type) {
@@ -67,6 +44,9 @@ function validateString(string, type) {
             break
         case 'password':
             return string.match(/^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,25}$/)
+            break
+        case 'email':
+            return /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(string)
             break
         default:
             return false
