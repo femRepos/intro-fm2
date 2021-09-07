@@ -6,46 +6,58 @@ form.addEventListener('submit', (event) => {
 })
 
 function checkValidation(isValid) {
-    let firstname = form.firstName.value;
-    let lastname = form.lastName.value;
-    let email = form.address.value;
-    let password = form.password.value;
+    let firstname = form.firstName;
+    let lastname = form.lastName;
+    let email = form.address;
+    let password = form.password;
 
-    if (firstname) {
-        if (isValid(firstname, 'name')) {
-            console.log('Firstname is valid! ' + firstname)
+    if (firstname.value) {
+        if (isValid(firstname.value, 'name')) {
+            console.log('Firstname is valid! ' + firstname.value)
+            removeError(firstname)
         } else {
             console.log('Firstname is invalid!')
+            alertError(firstname)
         }
-    } else console.log('First name cannot be empty!')
+    } else {
+        console.log('First name cannot be empty!')
+        alertError(firstname)
+    } 
 
 
-    if (lastname) {
-        if (isValid(lastname, 'name')) {
-            console.log('Lastname is valid! ' + lastname)
+    if (lastname.value) {
+        if (isValid(lastname.value, 'name')) {
+            console.log('Lastname is valid! ' + lastname.value)
+            removeError(lastname)
         } else {
             console.log('Lastname is invalid!')
+            alertError(lastname)
         }
-    } else console.log('Last name cannot be empty!')
+    } else {
+        console.log('Last name cannot be empty!')
+        alertError(lastname)
+    }
 
+    if (!email.value) {
+        console.log('Email cannot be empty!')
+        alertError(email)
+    } else {
+        console.log('Email is valid!')
+        removeError(email)
+    }
 
-    if (email) {
-        if (isValid(email, 'email')) {
-            console.log('Email is valid! ' + email)
-        } else {
-            console.log('Email is invalid!')
-        }
-    } else console.log('Email cannot empty!')
-
-
-    if (password) {
-        if (isValid(password, 'password')) {
-            console.log('Password is valid! ' + password)
+    if (password.value) {
+        if (isValid(password.value, 'password')) {
+            console.log('Password is valid! ' + password.value)
+            removeError(password)
         } else {
             console.log('Password must contain at least 8 characters consisting of a number & a special character: ' + password)
+            alertError(password)
         }
-    } else console.log('Password cannot be empty!')
-
+    } else {
+        console.log('Password cannot be empty!')
+        alertError(password)
+    } 
 }
 
 function validateString(string, type) {
@@ -68,5 +80,19 @@ function validateString(string, type) {
         default:
             return false
             break
+    }
+}
+
+function alertError(element) {
+    // add error class name to the label of a particular element
+    if (!element.parentNode.classList.contains('error')) {
+        element.parentNode.classList.add('error')
+    }
+}
+
+function removeError(element) {
+    // remove error class name from the label of a particular element
+    if (element.parentNode.classList.contains('error')) {
+        element.parentNode.classList.remove('error')
     }
 }

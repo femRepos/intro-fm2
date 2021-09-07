@@ -36,10 +36,25 @@
       </div>
 
       <form action="" method="post" autocomplete="off">
-        <input type="text" name="firstName" placeholder="First Name">
-        <input type="text" name="lastName" placeholder="Last Name">
-        <input type="email" name="address" placeholder="Email Address">
-        <input type="password" name="password" placeholder="Password">
+        <label for="firstName">
+          <input type="text" id="firstName" name="firstName" placeholder="First Name">
+          <small class="error__msg">First Name cannot be empty!</small>
+        </label>
+
+        <label for="lastName">
+          <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+          <small class="error__msg">Last Name cannot be empty!</small>
+        </label>
+
+        <label for="address">
+          <input type="email" id="address" name="address" placeholder="Email Address">
+          <small class="error__msg">Looks like this is not an email!</small>
+        </label>
+
+        <label for="password">
+          <input type="password" id="password" name="password" placeholder="Password">
+          <small class="error__msg">Password cannot be empty!</small>
+        </label>
 
         <button type="submit">Claim your free trial</button>
         
