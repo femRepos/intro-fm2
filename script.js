@@ -13,42 +13,33 @@ function checkValidation(isValid) {
 
     if (firstname.value) {
         if (isValid(firstname.value, 'name')) {
-            console.log('Firstname is valid! ' + firstname.value)
             removeError(firstname)
         } else {
-            console.log('Firstname is invalid!')
             alertError(firstname)
         }
     } else {
-        console.log('First name cannot be empty!')
         alertError(firstname)
     } 
 
 
     if (lastname.value) {
         if (isValid(lastname.value, 'name')) {
-            console.log('Lastname is valid! ' + lastname.value)
             removeError(lastname)
         } else {
-            console.log('Lastname is invalid!')
             alertError(lastname)
         }
     } else {
-        console.log('Last name cannot be empty!')
         alertError(lastname)
     }
 
     if (!email.value) {
-        console.log('Email cannot be empty!')
         alertError(email)
     } else {
-        console.log('Email is valid!')
         removeError(email)
     }
 
     if (password.value) {
         if (isValid(password.value, 'password')) {
-            console.log('Password is valid! ' + password.value)
             removeError(password)
         } else {
             console.log('Password must contain at least 8 characters consisting of a number & a special character: ' + password)

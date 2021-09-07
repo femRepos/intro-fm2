@@ -110,6 +110,10 @@ label {
     margin-top: 20px;
 }
 
+label:first-child {
+    margin-top: 0;
+}
+
 input,
 button {
     display: block;
@@ -125,10 +129,6 @@ input {
     border: 1px solid hsl(0, 0%, 85%);
     padding: 0 30px;
     color: var(--dark-blue);
-}
-
-input:first-child {
-    margin-top: 0;
 }
 
 input:focus {
@@ -244,11 +244,15 @@ small > span {
 
     input,
     button {
-        margin: 15px 0;
+        height: 50px;
     }
 
     input {
         font-size: 0.85rem;
         padding-left: 20px;
+    }
+
+    .error__icon {
+        right: 20px;
     }
 }
